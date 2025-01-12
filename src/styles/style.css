@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+/* Typical Devices Breakpoints 
+
+Mobile devices – 320px — 480px.
+iPads, Tablets – 481px — 768px.
+Small screens, laptops – 769px — 1024px.
+Desktops, large screens – 1025px — 1200px.
+Extra large screens, TV – 1201px, and more.
+
+/* **** */
+
+:root{
+/* --hsl-hue: 195; (azul) */
+	/* --color-01: hsl(var(--hsl-hue), 91%, 25%);  */
+
+	--text-color: #E1E1E6;
+	--bg-color: #000;
+	--link-remove-color: #F75A68;
+	--btn-bg-color: #065E7C;
+	--btn-bg-color-hover: #fff;
+	--input-search-bg: #06181C;
+	--input-search-placehover: #7C7C8A;
+	--thead-bg: #092D38;
+	--alt-row-odd-bg: hsla(194, 64%, 6%, 0.5);
+	--alt-row-even-bg: #06181C;
+	--color-white: hsl(0, 0%, 100%);
+	--link-hover: #0886b1;
+	--link-active: #0ec3ff;
+	--table-border-color: #4A808C;
+	--scroll: #4A808C;
+	
+	/*OBS: Gradient aplicado a 45° no footer, botões e section bg */
+	font-size: 62.5%;
+
+	font-family: "Roboto", serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body, input{
+	font-family: "Roboto", sans-serif;
+	color: var(--text-color)
+}
+
+body{
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: 1.6rem;
+}
+
+#div-no-fav.hide{
+	display: none;
+}
+
+#div-no-fav{
+	width: 100%;
+	border-radius: 0 0 16px 16px;
+	border: 1px solid #4A808C;
+	background-color: var(--alt-row-odd-bg);
+	height: auto;
+	height: 36rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6rem;
+}
+
+#no-fav-img{
+	width: 13.2rem;
+}
+
+#no-fav-text{
+	font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+	font-size: 4rem;
+}
+
+#app{
+	max-width: 112rem;
+	margin-inline: auto;
+	margin-top: 11.5rem;
+	padding: 1.6rem;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom:8.8rem;
+	flex-wrap: wrap;
+	column-gap: 8px;
+	row-gap: 16px;
+}
+
+#div-search{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px
+}
+
+#input-search{
+	background-color: var(--input-search-bg);
+	font-size: 1.6rem;
+	line-height: 100%;
+	padding: 1.6rem;
+	border-radius: 5px;
+	border: none;
+	width: 46.2rem;
+	height: 4.8rem;
+}
+
+
+#input-search::placeholder{
+	color: var(--input-search-placehover);
+	line-height: 100%;
+	font-size: 1.6rem;
+}
+
+#btn-fav{
+	background-color: var(--btn-bg-color);
+	color: var(--color-white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 32px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+#btn-fav:hover{
+	background-color: var(--btn-bg-color-hover);
+	color: var(--btn-bg-color);
+	;
+}
+
+#btn-fav:hover img{
+	box-shadow: 0 0 10px 3px var(--btn-bg-color-hover); /* Cor do contorno no hover */
+}
+
+#btn-fav span{
+	line-height: 2.4rem;
+}
+
+#table-fav{
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 80rem;
+}
+
+#table-fav td, #table-fav th{
+	width: 100%;
+}
+
+#table-fav thead, #table-fav tbody{
+  display: block;  
+}
+
+#table-fav tbody{
+	display: block;
+  overflow-y: scroll;
+  max-height: 360px;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
+
+#table-fav thead {
+	position: sticky; /* Fixa o cabeçalho da tabela no topo */
+	top: 0;
+	z-index: 1;
+	border: 1px solid #4A808C;
+	border-radius: 16px 16px 0 0;
+	border-bottom-width: 0px;
+}
+
+#table-fav tbody{
+	border: 1px solid #4A808C;
+	border-radius: 0 0 16px 16px;
+	border-top-width: 0px;
+}
+
+#table-fav tbody tr:not(:last-of-type) td{
+	border-bottom: 1px solid #4A808C;
+}
+
+#table-fav *{
+	font-size: 2rem;
+}
+
+#table-fav th{
+	padding-block: 1.6rem;
+	background-color: var(--thead-bg);
+}
+
+#table-fav th:first-child{
+	border-top-left-radius: 16px;
+}
+
+#table-fav th:last-child{
+	border-top-right-radius: 16px;
+}
+
+#table-fav tr:last-of-type td:first-of-type{
+	border-bottom-left-radius: 16px;
+}
+
+#table-fav tr:last-of-type td:last-of-type{
+	border-bottom-right-radius: 16px;
+}
+
+#table-fav tr:nth-child(odd) td{
+	background-color: var(--alt-row-odd-bg);
+}
+
+#table-fav tr:nth-child(even) td{
+	background-color: var(--alt-row-even-bg);
+}
+
+#table-fav td{
+	padding-block: 2.4rem;
+}
+
+#table-fav :is(th, td){
+	text-align: left;
+	padding-inline: 4rem;
+}
+
+td.user #user-flex-container{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+td.user img{
+	width: 5.6rem;
+	height: 5.6rem;
+
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+td.user a{
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+td.user a p{
+	font-weight: 700;
+}
+
+td.user a:hover :is(p, span){
+	color: var(--link-hover)
+}
+
+td.user a:active :is(p, span){
+	color: var(--link-active)
+}
+
+td.user a:visited{
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+td .remove{
+	color: var(--link-remove-color);
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+td .remove:hover{
+	text-decoration: underline;
+}
+
+/* Estilo para a barra de rolagem */
+#table-fav ::-webkit-scrollbar {
+	width: 6px; /* Largura da barra de rolagem */
+	height: 6px; /* Largura da barra de rolagem horizontal, caso queira */
+}
+
+/* Estilo para o "polegar" da barra de rolagem (a parte que o usuário arrasta) */
+#table-fav ::-webkit-scrollbar-thumb {
+	background-color: #4A808C; /* Cor do polegar */
+	border-radius: 10px; /* Arredondamento dos cantos */
+	cursor: pointer;
+}
+
+/* Estilo para a "faixa" da barra de rolagem (o fundo da barra de rolagem) */
+#table-fav ::-webkit-scrollbar-track {
+	background: transparent; /* Fundo transparente */
+	background: #e1e1e6f3; /* Fundo transparente */
+	border-radius: 10px; /* Arredondamento dos cantos */
+	
+}
+
+
+
+
