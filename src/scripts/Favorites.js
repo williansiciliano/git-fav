@@ -70,6 +70,7 @@ export class FavoritesView extends Favorites {
 		
 	}
 
+	//Passa o valor do input no argumento 'value' para o parâmetro em 'async add(username)'
 	onadd() {
 		const addButton = this.root.querySelector('#div-search #btn-fav')
 		addButton.onclick = () => {
